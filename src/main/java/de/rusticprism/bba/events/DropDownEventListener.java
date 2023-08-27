@@ -18,6 +18,7 @@ public class DropDownEventListener extends ListenerAdapter {
         if(api.getDropdowns().keySet().contains(id)) {
             DropDown dropDown = api.getDropdowns().get(id);
             int dropid = Integer.parseInt(event.getValues().get(0).replaceAll("bba_dropdown_option_",""));
+            dropDown.getConsumer().accept(dropDown.getOptions().get(dropid));
             event.editSelectMenu(dropDown.getMenu()).queue();
         }
     }

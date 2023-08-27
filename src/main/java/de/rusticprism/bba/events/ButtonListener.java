@@ -2,6 +2,7 @@ package de.rusticprism.bba.events;
 
 import de.rusticprism.bba.BetterButtonApi;
 import de.rusticprism.bba.interaction.CustomButton;
+import de.rusticprism.bba.util.Dummy;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -19,6 +20,7 @@ public class ButtonListener extends ListenerAdapter {
         if(api.getButtons().containsKey(id))  {
             CustomButton button = api.getButtons().get(id);
             button.setInteraction(event.getInteraction());
+            button.getConsumer().accept(new Dummy());
             event.editButton(button.getButton()).queue();
         }
     }

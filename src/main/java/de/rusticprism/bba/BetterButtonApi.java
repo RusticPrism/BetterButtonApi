@@ -43,6 +43,7 @@ public class BetterButtonApi {
         }
     }
     public StringSelectMenu registerDropDown(String placeholder, String[] options, Consumer<String> consumer) {
+        System.out.println("Register");
         dropdownid = dropdownid + 1;
         StringSelectMenu.Builder menu = StringSelectMenu.create("bba_dropdown_" + dropdownid);
         menu.setPlaceholder(placeholder);

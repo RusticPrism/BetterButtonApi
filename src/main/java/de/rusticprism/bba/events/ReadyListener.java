@@ -16,6 +16,7 @@ public class ReadyListener extends ListenerAdapter {
 
 
         message.addActionRow(api.registerButton("Test", ButtonStyle.DANGER,dummy -> {
+            System.out.println("Test");
             api.unregisterButton(1);
         }));
 
