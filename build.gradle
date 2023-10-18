@@ -15,3 +15,25 @@ dependencies {
         exclude module: 'opus-java'
     }
 }
+publishing{
+    repositories {
+        maven {
+            name = "RGB-Cloud"
+            url = "https://repo.rgb-cloud.net/repository/RGB-Cloud/"
+            credentials {
+                username = "jenkins-user"
+                password = "password"
+            }
+        }
+    }
+    publications {
+        shadow(MavenPublication) {
+            groupId = "de.rusticprism.bba"
+            artifactId = "BetterButtonAPI"
+            version = project.version
+            artifact(jar) {
+                builtBy jar
+            }
+        }
+    }
+}
