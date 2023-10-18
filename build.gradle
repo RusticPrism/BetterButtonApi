@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group = 'de.rusticprism.bba'
@@ -22,7 +23,7 @@ publishing{
             url = "https://repo.rgb-cloud.net/repository/RGB-Cloud/"
             credentials {
                 username = "jenkins-user"
-                password = "password"
+                password = "Zuxi*oW!HAJ%9mpb4a*b6uD3dKL3AR"
             }
         }
     }
