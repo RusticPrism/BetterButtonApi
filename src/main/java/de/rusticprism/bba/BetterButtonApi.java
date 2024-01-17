@@ -6,6 +6,7 @@ import de.rusticprism.bba.interaction.CustomButton;
 import de.rusticprism.bba.interaction.DropDown;
 import de.rusticprism.bba.util.Dummy;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
@@ -33,6 +34,12 @@ public class BetterButtonApi {
         buttonid = buttonid + 1;
         Button button = Button.of(style, "bba_button_" + buttonid, text);
         buttons.put(buttonid, new CustomButton(buttonid, text, button, consumer));
+        return button;
+    }
+    public Button registerButton(Emoji emoji, ButtonStyle style, Consumer<Dummy> consumer) {
+        buttonid = buttonid + 1;
+        Button button = Button.of(style, "bba_button_" + buttonid, emoji);
+        buttons.put(buttonid, new CustomButton(buttonid, emoji, button, consumer));
         return button;
     }
     public void unregisterButton(int id) {
