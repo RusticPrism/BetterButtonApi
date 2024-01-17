@@ -20,7 +20,7 @@ publishing{
     repositories {
         maven {
             name = "RGB-Cloud"
-            url = "https://repo.rgb-cloud.net/repository/RGB-Cloud/"
+            url = "https://repo.rgb-cloud.net/repository/RusticPrism/"
             credentials {
                 username = "jenkins-user"
                 password = "Zuxi*oW!HAJ%9mpb4a*b6uD3dKL3AR"
